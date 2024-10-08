@@ -166,6 +166,9 @@ spec:
           livenessProbe:
             exec:
               command: ["/bin/bash", "-l", "-c", "bundle exec sidekiqmon processes | grep $(hostname) || exit 1"]
+            periodSeconds: 60          
+            timeoutSeconds: 30        
+            failureThreshold: 5
           {{- with .Values.worker.resources }}
           resources:
             {{- toYaml . | nindent 12}}
