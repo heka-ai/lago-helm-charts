@@ -113,11 +113,11 @@ spec:
             {{ if .Values.global.s3.enabled }}
             - name: LAGO_USE_AWS_S3
               value: "true"
-            {{ if .Values.global.s3.endpoint }}
+              {{- if .Values.global.s3.endpoint }}
             - name: LAGO_AWS_S3_ENDPOINT
-              value: {{ default "" .Values.global.s3.endpoint | quote }}
-            {{ end }}
-            {{ if or .Values.global.s3.accessKeyId .Values.global.existingSecret }}
+              value: {{ .Values.global.s3.endpoint | quote }}
+              {{- end }}
+              {{ if or .Values.global.s3.accessKeyId .Values.global.existingSecret }}
             - name: LAGO_AWS_S3_ACCESS_KEY_ID
               valueFrom:
                 secretKeyRef:
