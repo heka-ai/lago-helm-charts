@@ -113,7 +113,7 @@ spec:
             {{ if .Values.global.s3.enabled }}
             - name: LAGO_USE_AWS_S3
               value: "true"
-            {{ if .Values.global.s3.aws.endpoint }}
+            {{ if .Values.global.s3.endpoint }}
             - name: LAGO_AWS_S3_ENDPOINT
               value: {{ .Values.global.s3.endpoint | quote }}
             {{ end }}
