@@ -192,7 +192,7 @@ spec:
               value: {{ if .Values.minio.enabled }}
                         {{ (index .Values.minio.buckets 0).name | quote }}
                       {{ else }}
-                        {{ .Values.global.s3.aws.bucket | quote }}
+                        {{ .Values.global.s3.bucket | quote }}
                       {{ end }}
             - name: LAGO_AWS_S3_REGION
               value: {{ if .Values.global.s3.enabled }}
