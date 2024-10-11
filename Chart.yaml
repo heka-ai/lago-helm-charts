@@ -3,9 +3,6 @@ appVersion: '1.12.2'
 description: the Lago open source billing app
 name: lago
 version: 1.12.2
-sources:
-  - https://github.com/bitnami/charts
-  - https://github.com/minio/minio/tree/master/helm/minio
 dependencies:
   - name: postgresql
     version: '13.2.2'
